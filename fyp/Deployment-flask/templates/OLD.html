@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>TEST API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>predict stage</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Gender" placeholder="Gender" required="required" />
+		<input type="text" name="How_often_take_therapies" placeholder="How_often_take_therapies" required="required" />
+		<input type="text" name="dw_reading" placeholder="dw_reading" required="required" />
+        <input type="text" name="dw_spelling" placeholder="dw_spelling" required="required" />
+		<input type="text" name="dw_written_expression" placeholder="dw_written_expression" required="required" />
+		<input type="text" name="dw_speed_in_writing" placeholder="dw_speed_in_writing" required="required" />
+        <input type="text" name="dw_numbers" placeholder="dw_numbers" required="required" />
+		<input type="text" name="dw_concentration" placeholder="dw_concentration" required="required" />
+		<input type="text" name="dw_memory" placeholder="dw_memory" required="required" />
+        <input type="text" name="dw_handwriting" placeholder="dw_handwriting" required="required" />
+		<input type="text" name="easily_distracted" placeholder="easily_distracted" required="required" />
+		<input type="text" name="lack_of_motivation" placeholder="lack_of_motivation" required="required" />
+        <input type="text" name="like_school" placeholder="like_school" required="required" />
+		<input type="text" name="slow_to_learn" placeholder="slow_to_learn required="required" />
+		<input type="text" name="avoidence" placeholder="avoidence" required="required" />
+        <input type="text" name="lost_confidence" placeholder="lost_confidence" required="required" />
+		<input type="text" name="effort" placeholder="effort" required="required" />
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

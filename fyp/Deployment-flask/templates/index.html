@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<h1>predict stage</h1>
+<style>
+body{
+background-image: url("https://media.gettyimages.com/videos/loopable-moving-particles-video-id467810364?s=640x640");
+ 
+background-color: #87BEC4;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+ 
+	
+	
+	<style> 
+.login {
+  column-count: 1;
+}
+</style>
+<div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+    <ul class="columns" data-columns="2">
+    	 <label for="Age">Age:</label>
+        <select id="Age" type="text" name="Age" required="required" >
+          <option value="7">7</option>
+          <option value="8">8</option>
+         </select> </br>
+        
+         <label for="Gender">Gender:</label>
+        <select id="gender" type="text" name="Gender" required="required" >
+          <option value="1">male</option>
+          <option value="0">female</option>
+         </select> </br>
+         <label for="How_often_take_therapies">How often take therapies:</label>
+        <select id="How_often_take_therapies" type="text" name="How_often_take_therapies" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+         </select> </br>
+         <label for="dw_reading">Reading:</label>
+        <select id="dw_reading" type="text" name="dw_reading" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+         </select> </br>
+         <label for="dw_spelling">Spelling:</label>
+        <select id="dw_spelling" type="text" name="dw_spelling" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          </select> </br>
+
+      
+         <label for="dw_concentration">Concentration:</label>
+        <select id="dw_concentration" type="text" name="dw_concentration" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+         </select> </br>
+         <label for="dw_memory">Memory:</label>
+        <select id="dw_memory" type="text" name="dw_memory" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+         </select> </br>
+         
+         <label for="easily_distracted">Easily distracted:</label>
+        <select id="easily_distracted" type="text" name="easily_distracted" required="required" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+         </select> </br>
+         <label for="lack_of_motivation">lack of motivation:</label>
+        <select id="lack_of_motivation" type="text" name="lack_of_motivation" required="required" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+         </select> </br>
+         <label for="like_school">like school:</label>
+        <select id="like_school" type="text" name="like_school" required="required" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+         </select> </br>
+                  
+         <label for="effort">Effort:</label>
+        <select id="effort" type="text" name="effort" required="required" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+         </select>  </br>
+         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+         </ul>
+    	
+
+	
+
+     
+    </form>
+    </div>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+   <br>
+   
+   <br>
+   
+   <form>
+   {{abc}}
+</form>
+ </div>
+
+
+</body>
+</html>
